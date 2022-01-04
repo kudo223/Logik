@@ -20,9 +20,9 @@ namespace Logik
         }
         public void Draw(Graphics graphics,PointF location,int size)
         {
-            foreach (var pin in Pins)
+            for (int i = 0; i < Pins.Length; i++)
             {
-                pin.Draw(graphics, Pens.Black, location, size);
+                Pins[i].Draw(graphics, Pens.Black, new PointF(location.X + i * size * 1.25F, location.Y), size);
             }
         }
     }
